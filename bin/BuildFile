@@ -1,0 +1,15 @@
+<bin name=create_diagram.exe file=create_diagram.cpp></bin>
+<bin name=m2lnQ_creator.exe file=m2lnQ_creator.cpp></bin>
+<bin name=model_html.exe file=model_html.cpp></bin>
+<bin name=ratio_finder.exe file=ratio_finder.cpp></bin>
+<bin name=significance.exe file=significance.cpp></bin>
+
+<lib name=PhysicsToolsRooStatsCms>
+
+
+<lib name=EG>
+<lib name=RooFitCore>
+<lib name=RooFit>
+<lib name=RooStats>
+<use name=FWCore/Framework>
+<use name=root>
