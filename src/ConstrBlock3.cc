@@ -1,12 +1,12 @@
-// @(#)root/hist:$Id: ConstrBlock3.cc,v 1.8 2008/11/10 08:17:08 dpiparo Exp $
+// @(#)root/hist:$Id: ConstrBlock3.cc,v 1.2 2009/02/20 09:43:00 dpiparo Exp $
 // Author: Danilo.Piparo@cern.ch   01/06/2008
 
 #include "assert.h"
 
 #include "RooFormulaVar.h"
 
-#include "ConstrBlock3.h"
-#include "ConstrBlock2.h"
+#include "PhysicsTools/RooStatsCms/interface/ConstrBlock3.h"
+#include "PhysicsTools/RooStatsCms/interface/ConstrBlock2.h"
 
 
 
@@ -536,10 +536,19 @@ void ConstrBlock3::fluctuate(){
                   << "  - constr3_val : "
                   << constr3->getOriginalValue() << " --- " << y[2] << std::endl;
 
-    constr1->setVal(y[0]);
-    constr2->setVal(y[1]);
-    constr3->setVal(y[2]);
-
+    if (y[0] < constr1.getMin() or
+        y[1] < constr2.getMin() or
+        y[2] < constr3.getMin() or
+        y[0] > constr1.getMax() or
+        y[1] > constr2.getMax() or
+        y[2] > constr3.getMax() or
+        )
+        fluctuate();
+    else{
+        constr1->setVal(y[0]);
+        constr2->setVal(y[1]);
+        constr3->setVal(y[2]);
+        }
     }
 /*----------------------------------------------------------------------------*/
 
@@ -681,6 +690,6 @@ ConstrBlock3::~ConstrBlock3(){
 /*----------------------------------------------------------------------------*/
 
 /// To build the cint dictionaries
-ClassImp(ConstrBlock3)
+//ClassImp(ConstrBlock3)
 
 /*----------------------------------------------------------------------------*/
