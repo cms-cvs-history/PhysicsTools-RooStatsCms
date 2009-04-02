@@ -10,14 +10,14 @@
 #include "RooDataHist.h"
 #include "RooArgList.h"
 
-#include "RscBaseModel.h"
+#include "PhysicsTools/RooStatsCms/interface/RscBaseModel.h"
 
 #include "TH1F.h"
 #include "TFile.h"
 #include "TRandom.h"
 
 /// Cint dictionaries
-ClassImp(RscBaseModel);
+//ClassImp(RscBaseModel);
 
 /*----------------------------------------------------------------------------*/
 
@@ -152,6 +152,13 @@ void RscBaseModel::buildPdf() {
         }
 
     TH1F* model_histo = (TH1F*) modelfile.Get(dataName.getVal());
+
+    if(model_histo==0){
+       std::cout << "ERROR: did not find histogram '" << dataName.getVal() 
+                 << "' in the histogram file (" << fileName.getVal() 
+                 << "). Aborting..." << std::endl;
+       abort();
+       }
 
     RooArgSet* var_set=new RooArgSet(*x);
 
