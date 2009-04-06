@@ -1,4 +1,4 @@
-// @(#)root/hist:$Id: ConstrBlock2.cc,v 1.6 2008/09/24 09:18:54 dpiparo Exp $
+// @(#)root/hist:$Id: ConstrBlock2.cc,v 1.1.2.2 2009/03/23 21:40:03 dpiparo Exp $
 // Author: Danilo.Piparo@cern.ch   01/06/2008
 
 #include "assert.h"
@@ -219,8 +219,19 @@ void ConstrBlock2::fluctuate(){
                   << "  - constr2_val : "
                   << constr2->getOriginalValue() << " --- " << y[1] << std::endl;
 
-    constr1->setVal(y[0]);
-    constr2->setVal(y[1]);
+
+    if (y[0] < constr1->getMin() or
+        y[1] < constr2->getMin() or
+        y[0] > constr1->getMax() or
+        y[1] > constr2->getMax()){
+        std::cerr << "[ConstrBlock2::fluctuate]"
+                  << " Correlated variable outside limits... Regenerating.\n";
+        fluctuate();
+        }
+    else{
+        constr1->setVal(y[0]);
+        constr2->setVal(y[1]);
+        }
 
     }
 
@@ -293,6 +304,6 @@ ConstrBlock2::~ConstrBlock2(){
 /*----------------------------------------------------------------------------*/
 
 /// To build the cint dictionaries
-ClassImp(ConstrBlock2)
+//ClassImp(ConstrBlock2)
 
 /*----------------------------------------------------------------------------*/

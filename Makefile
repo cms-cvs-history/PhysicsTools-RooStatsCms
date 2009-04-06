@@ -1,9 +1,9 @@
-SRC=src
+# Makefile for the RSC standalone version
 
+SRC=src
 
 # command for documentation generation
 DOXYGEN=doxygen
-
 
 .PHONY: all clean cleandict exe doc
 
