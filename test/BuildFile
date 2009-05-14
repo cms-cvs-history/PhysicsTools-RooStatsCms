@@ -1,0 +1,3 @@
+<bin file="testFeldmanCousinsBinomial.cpp" name="testFeldmanCousinsBinomial">
+  <use name=PhysicsTools/RooStatsCms>
+</bin> 

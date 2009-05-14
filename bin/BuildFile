@@ -4,7 +4,7 @@
 <bin name=ratio_finder.exe file=ratio_finder.cpp></bin>
 <bin name=significance.exe file=significance.cpp></bin>
 
-<lib name=PhysicsToolsRooStatsCms>
+<use name=PhysicsTools/RooStatsCms>
 
 
 <lib name=EG>
