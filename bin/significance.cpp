@@ -7,9 +7,21 @@
 
 #include "RooGlobalFunc.h"
 
-#include "PhysicsTools/RooStatsCms/interface/Minus2LnQCalculator.h"
-#include "PhysicsTools/RooStatsCms/interface/RscConstrArrayFiller.h"
-#include "PhysicsTools/RooStatsCms/interface/RscCombinedModel.h"
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "Minus2LnQCalculator.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/Minus2LnQCalculator.h"
+#endif
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "RscConstrArrayFiller.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/RscConstrArrayFiller.h"
+#endif
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "RscCombinedModel.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/RscCombinedModel.h"
+#endif
 
 
 int main(int argc, char** argv){

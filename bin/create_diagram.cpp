@@ -2,7 +2,11 @@
 
 #include "RooGlobalFunc.h"
 
-#include "PhysicsTools/RooStatsCms/interface/RscCombinedModel.h"
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "RscCombinedModel.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/RscCombinedModel.h"
+#endif
 
 
 #include "TString.h"

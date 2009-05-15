@@ -15,9 +15,21 @@ Useful to answer questions like:
 
 #include "RooGlobalFunc.h"
 
-#include "PhysicsTools/RooStatsCms/interface/RatioFinder.h"
-#include "PhysicsTools/RooStatsCms/interface/RscCombinedModel.h"
-#include "PhysicsTools/RooStatsCms/interface/RscConstrArrayFiller.h"
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "RatioFinder.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/RatioFinder.h"
+#endif
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "RscCombinedModel.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/RscCombinedModel.h"
+#endif
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "RscConstrArrayFiller.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/RscConstrArrayFiller.h"
+#endif
 
 
 int main(int argc, char** argv){

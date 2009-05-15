@@ -11,9 +11,21 @@ It dumps a png image of the plot and a rootfile with the LimitResults object.
 #include "RooGlobalFunc.h"
 #include "RooRandom.h"
 
-#include "PhysicsTools/RooStatsCms/interface/LimitCalculator.h"
-#include "PhysicsTools/RooStatsCms/interface/RscCombinedModel.h"
-#include "PhysicsTools/RooStatsCms/interface/RscConstrArrayFiller.h"
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "LimitCalculator.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/LimitCalculator.h"
+#endif
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "RscCombinedModel.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/RscCombinedModel.h"
+#endif
+#if (defined (STANDALONE) or defined (__CINT__) )
+   #include "RscConstrArrayFiller.h"
+#else
+   #include "PhysicsTools/RooStatsCms/interface/RscConstrArrayFiller.h"
+#endif
 
 int main(int argc, char** argv){
 
