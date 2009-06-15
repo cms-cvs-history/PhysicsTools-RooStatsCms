@@ -64,7 +64,7 @@ int main(int argc, char** argv){
 
     // The object that collects all the constraints and the blocks of correlated constraints
     ConstrBlockArray constr_array("ConstrArray", "The array of constraints");
-    constr_array.setVerbosity(true);
+    constr_array.setVerbosity(false);
 
     // Facility to read the card and fill the constraints array properly
     RscConstrArrayFiller filler("ConstrFiller", "The array Filler", model.getConstraints());
