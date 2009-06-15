@@ -87,7 +87,7 @@ int main(int argc, char** argv){
     RooMsgService::instance().setGlobalKillBelow(RooMsgService::DEBUG) ;
 
     // Get theplot and impose to observe the median of the SB distribution
-    LimitPlot* p = res->getPlot("","",300);
+    LimitPlot* p = res->getPlot("","",100);
 
     // Now dump the stuff on disk, creating some meaningful names
     TString image_name((model_name+"_m2lnQ_distrinutions_"+n_toys_s+".png").Data());
