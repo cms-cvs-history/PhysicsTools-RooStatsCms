@@ -22,7 +22,10 @@
     <use name=PhysicsTools/RooStatsCms>
 </bin>
 
-
+<bin name="testCrabToyMC" file="testCrabToyMC.cpp">
+   <use name=rootroofit>
+   <use name=boost_program_options>
+</bin>
 
 <!--<use name=PhysicsTools/RooStatsCms>
 <lib name=EG>
