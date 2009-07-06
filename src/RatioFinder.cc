@@ -1,4 +1,4 @@
-// @(#)root/hist:$Id: RatioFinder.cc,v 1.2 2009/01/06 11:57:54 dpiparo Exp $
+// @(#)root/hist:$Id: RatioFinder.cc,v 1.2 2009/01/21 10:10:34 dpiparo Exp $
 // Author: Danilo.Piparo@cern.ch   07/10/2008
 
 #include "assert.h"
@@ -413,7 +413,9 @@ LimitResults* RatioFinder::m_get_LimitResults(unsigned int n_toys){
                          &m_variables,
                          m_c_array);
 
-    LimitResults* res = calc.calculate (n_toys,true);
+    LimitResults* res;
+    if (m_c_array == NULL) res = calc.calculate (n_toys,false);
+    else res = calc.calculate (n_toys,true);
 
     return res;
     }
