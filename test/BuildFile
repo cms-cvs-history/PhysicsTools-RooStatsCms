@@ -13,5 +13,8 @@
 
 <lib name=RooFitCore>
 <lib name=RooFit>
+<lib name=Foam>
+
+
 
 
