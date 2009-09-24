@@ -1,15 +1,11 @@
 <bin name="testFeldmanCousinsBinomial.exe" file="testFeldmanCousinsBinomial.cpp" ></bin> 
 <bin name="testCrabToyMC.exe" file="testCrabToyMC.cpp">
-   <use name=boost_program_options>
+  <use name=boost_program_options>
 </bin>
-
 
 <use name=root>
 <use name=rootmath>
-<use name=rootroofit>
 <use name=rootroofitcore>
-<use name=rootroostats>
-
-<use name=PhysicsTools/RooStatsCms>
+<use name=rootroofit>
 
 <use name=FWCore/Framework>
