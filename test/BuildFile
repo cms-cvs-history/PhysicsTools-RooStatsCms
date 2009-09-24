@@ -8,8 +8,8 @@
 <use name=FWCore/ParameterSet>
 <use name=root>
 <use name=rootmath>
-<use name=rootroofitcore>
-<use name=rootroofit>
+<use name=roofitcore>
+<use name=roofit>
 
 <lib name=RooFitCore>
 <lib name=RooFit>
