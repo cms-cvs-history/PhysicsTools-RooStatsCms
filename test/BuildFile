@@ -12,8 +12,3 @@
 <use name=rootmath>
 <use name=roofitcore>
 <use name=roofit>
-
-<lib name=RooFitCore>
-<lib name=RooFit>
-<lib name=Foam>
-
